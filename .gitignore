@@ -1,0 +1,5 @@
+.lazy/
+plugin/
+.DS_Store
+*.backup
+*.bak
