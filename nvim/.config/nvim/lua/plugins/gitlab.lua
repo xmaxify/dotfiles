@@ -12,6 +12,12 @@ return {
 	end,
 	event = "BufRead",
 	config = function()
-		require("gitlab").setup()
+		require("gitlab").setup({
+			create_mr = {
+				delete_branch = true,
+				squash = false,
+				title_from_commit = true,
+			},
+		})
 	end,
 }
