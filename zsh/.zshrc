@@ -29,3 +29,4 @@ gitlab-init-envrc() {
   direnv allow
   echo "✅ .envrc created with personal GitLab token"
 }
+eval "$(direnv hook zsh)"
