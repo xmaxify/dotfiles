@@ -1,29 +1,30 @@
 [core]
-    editor = nvim
-    autocrlf = input
+  editor = nvim
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
 
 [merge]
-    tool = diffview
+  tool = diffview
 
 [mergetool]
-    keepBackup = false
-    keepTemporaries = false
+  keepBackup = false
+  keepTemporaries = false
 
 [mergetool "diffview"]
-    cmd = nvim -c "DiffviewOpen" "$MERGED"
-    trustExitCode = true
+  cmd = nvim -c "DiffviewOpen" "$MERGED"
+  trustExitCode = true
 
 [fetch]
-    prune = true
+  prune = true
 
 [rebase]
-    autoStash = true
+  autoStash = true
 
 [pull]
-    rebase = true
+  rebase = true
 
 [push]
-    autoSetupRemote = true
+  autoSetupRemote = true
 
 [include]
-    path = ~/.gitconfig-local
+  path = ~/.gitconfig-local
