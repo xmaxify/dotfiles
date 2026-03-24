@@ -13,6 +13,9 @@
     cmd = nvim -c "DiffviewOpen" "$MERGED"
     trustExitCode = true
 
+[fetch]
+    prune = true
+
 [rebase]
     autoStash = true
 
