@@ -19,6 +19,7 @@ bindkey '^I' expand-or-complete-prefix
 #  compinit
 #fi
 # ~/.zshrc
+export GITLAB_TOKEN=$(security find-generic-password -a "$USER" -s "gitlab_token_work" -w 2>/dev/null)
 gitlab-init-envrc() {
   if [ -f .envrc ]; then
     echo "⚠️  .envrc już istnieje"
