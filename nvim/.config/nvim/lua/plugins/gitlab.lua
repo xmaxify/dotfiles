@@ -16,7 +16,6 @@ return {
 			create_mr = {
 				delete_branch = true,
 				squash = false,
-				title_from_commit = true,
 			},
 		})
 	end,
