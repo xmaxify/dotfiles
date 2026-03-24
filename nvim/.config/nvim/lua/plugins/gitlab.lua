@@ -16,6 +16,8 @@ return {
 		require("gitlab").setup({
 			create_mr = {
 				squash = false,
+				target = nil,
+				delete_branch = true,
 			},
 		})
 	end,
