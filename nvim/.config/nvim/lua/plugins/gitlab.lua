@@ -14,7 +14,6 @@ return {
 	config = function()
 		require("gitlab").setup({
 			create_mr = {
-				delete_branch = true,
 				squash = false,
 			},
 		})
