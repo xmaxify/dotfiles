@@ -2,6 +2,8 @@
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+export PATH="$HOME/.local/bin:$PATH"
+
 autoload -Uz compinit
 compinit
 
