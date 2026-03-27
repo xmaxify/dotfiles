@@ -33,3 +33,4 @@ gitlab-init-envrc() {
   echo "✅ .envrc created with personal GitLab token"
 }
 eval "$(direnv hook zsh)"
+eval "$(zoxide init zsh)"
