@@ -1,1 +1,5 @@
 vim.keymap.set({ "i", "v" }, "jk", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-/>", function()
+	Snacks.terminal(nil, { cwd = LazyVim.root() })
+	vim.cmd("startinsert")
+end, { desc = "Terminal (Root Dir)" })
