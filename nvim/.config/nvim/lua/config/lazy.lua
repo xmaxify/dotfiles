@@ -23,15 +23,15 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "plugins" },
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+	spec = {
+		-- import your plugins
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ import = "lazyvim.plugins.extras.lang.markdown" },
+		{ import = "plugins" },
+	},
+	-- Configure any other settings here. See the documentation for more details.
+	-- colorscheme that will be used when installing plugins.
+	install = { colorscheme = { "habamax" } },
+	-- automatically check for plugin updates
+	checker = { enabled = true },
 })
-
