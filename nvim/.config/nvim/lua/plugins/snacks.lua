@@ -10,8 +10,12 @@ return {
 			picker = {
 				sources = {
 					explorer = {
-						hidden = true, -- H
-						ignored = true, -- I
+						hidden = true,
+						ignored = true,
+					},
+					grep = {
+						follow = true,
+						hidden = true,
 					},
 				},
 			},
