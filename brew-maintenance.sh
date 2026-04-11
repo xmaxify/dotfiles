@@ -14,7 +14,7 @@ echo "🧹 Cleaning up..."
 brew cleanup
 
 echo "📦 Dumping Brewfile..."
-brew bundle dump --all --force --file="$DOTFILES_DIR/Brewfile-macos"
+brew bundle dump --all --force --file="$DOTFILES_DIR/Brewfile_macos"
 
 cd "$DOTFILES_DIR"
 
@@ -25,8 +25,8 @@ fi
 
 echo "🌿 Creating branch..."
 git checkout -b "$BRANCH"
-git add Brewfile-macos
-git diff --cached --quiet || git commit -m "chore(brew): update Brewfile $(date +%Y-%m-%d)"
+git add Brewfile_macos
+git diff --cached --quiet || git commit -m "chore(brew): update Brewfile_macos $(date +%Y-%m-%d)"
 
 echo "🚀 Pushing..."
 git push -u origin "$BRANCH"
