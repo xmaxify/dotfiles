@@ -18,7 +18,7 @@ brew bundle dump --all --force --file="$DOTFILES_DIR/Brewfile_macos"
 
 cd "$DOTFILES_DIR"
 
-if git diff --quiet Brewfile; then
+if git diff --quiet Brewfile_macos; then
   echo "✅ Brewfile bez zmian, nic do zrobienia."
   exit 0
 fi
