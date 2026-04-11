@@ -32,3 +32,24 @@ vim.api.nvim_create_autocmd("OptionSet", {
 		end
 	end,
 })
+vim.keymap.set("n", "<leader>tv", function()
+	local tfvars = vim.fn.expand("%:h") .. "/terraform.tfvars"
+	local buf = vim.fn.bufadd(tfvars)
+	vim.fn.bufload(buf)
+
+	local width = math.floor(vim.o.columns * 0.6)
+	local height = math.floor(vim.o.lines * 0.4)
+
+	vim.api.nvim_open_win(buf, true, {
+		relative = "editor",
+		width = width,
+		height = height,
+		col = math.floor((vim.o.columns - width) / 2),
+		row = math.floor((vim.o.lines - height) / 2),
+		style = "minimal",
+		border = "rounded",
+	})
+
+	-- zamknij przez q
+	vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = buf, silent = true })
+end, { desc = "Preview terraform.tfvars" })
