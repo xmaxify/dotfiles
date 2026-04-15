@@ -14,6 +14,7 @@ vim.filetype.add({
 		[".*/ci%-standards/templates/.*%.yml"] = "yaml.gitlab",
 	},
 })
+vim.opt.fixendofline = true
 -- vim.filetype.add({
 -- 	pattern = {
 -- 		[".*/%.gitlab%-ci%.yml"] = "yaml.gitlab",
