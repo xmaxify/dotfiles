@@ -1,13 +1,29 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  opts = {
-    ensure_installed = {
-      "lua", "vim", "bash", "python",
-      "yaml", "json", "hcl", "dockerfile",
-      "terraform", "markdown",
-    },
-    highlight = { enable = true },
-    indent = { enable = true },
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = {
+			ensure_installed = {
+				"go",
+				"hcl",
+				"dockerfile",
+				"terraform",
+			},
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<leader>v",
+					node_incremental = "<leader>v",
+					node_decremental = "<bs>",
+				},
+			},
+		},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		opts = {
+			enable = true,
+			max_lines = 3,
+			trim_scope = "outer",
+		},
+	},
 }

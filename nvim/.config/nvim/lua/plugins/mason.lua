@@ -11,7 +11,11 @@ return {
 			"ansible-lint",
 			"tflint",
 			"gitlab-ci-ls",
+			"docker-language-server",
 			"yamllint",
+			"terraform",
+			"tfsec",
+			"yaml-language-server",
 		},
 	},
 }

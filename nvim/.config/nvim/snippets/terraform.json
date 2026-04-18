@@ -1,0 +1,12 @@
+{
+  "variable with description": {
+    "prefix": "tfvard",
+    "body": [
+      "variable \"${1:name}\" {",
+      "  description = \"${2:description}\"",
+      "  type        = ${3:string}",
+      "  default     = \"${4:value}\"",
+      "}"
+    ]
+  }
+}
