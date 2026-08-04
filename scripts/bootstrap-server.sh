@@ -33,6 +33,31 @@ install_nvim() {
   log "nvim installed: $($LOCAL_BIN/nvim --version | head -1)"
 }
 
+# --- ripgrep ---
+install_ripgrep() {
+  if command -v rg &>/dev/null; then
+    log "ripgrep $(rg --version | head -1) already installed, skipping"
+    return
+  fi
+
+  log "Installing ripgrep..."
+  local rg_version
+  rg_version=$(curl -fsSL https://api.github.com/repos/BurntSushi/ripgrep/releases/latest |
+    grep -oP '"tag_name": "\K[^"]+')
+
+  local rg_tarball="ripgrep-${rg_version}-x86_64-unknown-linux-musl.tar.gz"
+  curl -fsSL "https://github.com/BurntSushi/ripgrep/releases/download/${rg_version}/${rg_tarball}" \
+    -o "/tmp/${rg_tarball}"
+
+  mkdir -p "$LOCAL_BIN"
+  tar -xzf "/tmp/${rg_tarball}" -C /tmp
+  cp "/tmp/ripgrep-${rg_version}-x86_64-unknown-linux-musl/rg" "$LOCAL_BIN/rg"
+  chmod +x "$LOCAL_BIN/rg"
+  rm -rf "/tmp/${rg_tarball}" "/tmp/ripgrep-${rg_version}-x86_64-unknown-linux-musl"
+
+  log "ripgrep installed: $($LOCAL_BIN/rg --version | head -1)"
+}
+
 # --- dotfiles ---
 setup_dotfiles() {
   if [[ -d "$DOTFILES_DIR/.git" ]]; then
@@ -88,6 +113,7 @@ setup_alias() {
 }
 
 install_nvim
+install_ripgrep
 setup_dotfiles
 setup_stow
 ensure_path
