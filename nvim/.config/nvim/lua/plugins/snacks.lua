@@ -16,6 +16,7 @@ return {
 					grep = {
 						follow = true,
 						hidden = true,
+						ignored = true,
 					},
 				},
 			},
