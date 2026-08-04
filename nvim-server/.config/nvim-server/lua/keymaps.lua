@@ -21,8 +21,31 @@ map("n", "<C-l>", "<C-w>l", "Move to right window")
 map("v", "J", ":m '>+1<CR>gv=gv", "Move selection down")
 map("v", "K", ":m '<-2<CR>gv=gv", "Move selection up")
 
--- terminal
-map("n", "<C-/>", "<cmd>split | terminal<cr><cmd>startinsert<cr>", "Open terminal")
+-- terminal (bottom split, toggle)
+local term_win, term_buf
+
+local function toggle_terminal()
+	if term_win and vim.api.nvim_win_is_valid(term_win) then
+		vim.api.nvim_win_hide(term_win)
+		term_win = nil
+		return
+	end
+
+	vim.cmd("botright split")
+	term_win = vim.api.nvim_get_current_win()
+	vim.api.nvim_win_set_height(term_win, math.floor(vim.o.lines * 0.3))
+
+	if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+		vim.api.nvim_win_set_buf(term_win, term_buf)
+	else
+		vim.cmd.terminal()
+		term_buf = vim.api.nvim_get_current_buf()
+	end
+
+	vim.cmd.startinsert()
+end
+
+map({ "n", "t" }, "<leader>ft", toggle_terminal, "Toggle terminal (bottom split)")
 
 -- schowanie podświetlenia wyszukiwania
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", "Clear search highlight")
