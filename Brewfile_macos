@@ -1,48 +1,104 @@
-tap "hashicorp/tap"
+tap "hashicorp/tap", trusted: true
+tap "macos-fuse-t/cask"
+tap "textfuel/tap"
+# Securely store and access AWS credentials in development environments
 brew "aws-vault"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
 brew "gh"
+# Open-source GitLab command-line tool
 brew "glab"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Command-line utility for Home Assistant
 brew "homeassistant-cli"
+# CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
+# Lazier way to manage everything docker
 brew "lazydocker"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Apple Silicon Monitor Top written in Go Lang
 brew "mactop"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Open Fortinet client for PPP+TLS VPN tunnel services
 brew "openfortivpn", restart_service: :changed
+# Terminal UI for Proxmox VE
 brew "pvetui"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
 brew "rust"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Terraform version manager inspired by rbenv
 brew "tfenv", link: false
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Internet file retriever
+brew "wget"
+# Generate your Xcode project from a spec file and your folder structure
 brew "xcodegen"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Real-time type-ahead completion for Zsh
 brew "zsh-autocomplete"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
 brew "zsh-completions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Better and friendly vi(vim) mode plugin for ZSH
 brew "zsh-vi-mode"
+# Terraform
 brew "hashicorp/tap/terraform"
+# SSHFS implementation built against fuse-t's installed libfuse3
+brew "macos-fuse-t/cask/sshfs-fuse-t", trusted: true
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
 cask "font-jetbrains-mono-nerd-font"
+# Kext-less implementation of FUSE
+cask "fuse-t"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Companion app for Home Assistant home automation software
 cask "home-assistant"
+# Keyboard customiser
 cask "karabiner-elements"
+# Password manager app
 cask "keepassxc"
+# Software for Logitech devices
 cask "logi-options+"
+# Office suite
 cask "microsoft-office"
+# Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Music streaming service
 cask "spotify"
+# License free Wi-Fi, VPN, and Access Application for Organizations
 cask "unifi-identity-endpoint"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
+# Gecko based web browser
 cask "zen"
